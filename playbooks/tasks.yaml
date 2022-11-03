@@ -1,0 +1,24 @@
+--- # start of a yaml file
+- name: My first play # this is optional line, this is name of play
+  hosts: localhost    # this is the target
+  tasks: 
+    - name: Task1      # this is optional line, this is task1
+      command: "ls -l /tmp"
+
+    - name: Task2
+      command: "ls -l /etc"
+
+    - name: Create empty file
+      file: 
+        path: /tmp/testfile1
+        state: touch
+        mode: u+x,g+wx,o+x
+
+    - name: Change ownership of testfile1
+      file: 
+        path: /tmp/testfile1
+        owner: amy
+        group: amy
+
+
+    

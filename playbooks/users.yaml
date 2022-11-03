@@ -1,0 +1,14 @@
+--- 
+- name: Add the user Amy with a uid and gid
+  hosts: localhost
+  tasks:
+    - name: change group id
+      group:
+        name: amy
+        gid: 2500
+
+    - name: change user id
+      user:
+        name: amy
+        uid: 2500
+        group: amy
