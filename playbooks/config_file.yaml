@@ -1,0 +1,9 @@
+---
+- name:
+  hosts: app
+  tasks: 
+    - name: write in a file
+      lineinfile: 
+        path: /tmp/config
+        line: "This is config line"
+        create: yes
