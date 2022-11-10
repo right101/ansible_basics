@@ -1,0 +1,12 @@
+---
+  all:
+    hosts: #ungroupped hosts
+    children:
+      app:  #user defined group
+        hosts:
+          host1: # hostname
+            ansible_host: 10.116.0.2
+      database: #user defined group
+        hosts:
+          host2: #hostname
+            ansible_host: 10.116.0.4
