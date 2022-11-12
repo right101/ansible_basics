@@ -1,0 +1,10 @@
+---
+- name: Ping Servers
+  hosts: all
+  gather_facts: yes
+  tasks:
+    - name: Ping
+      ping:
+      when: (ansible_facts['distribution'] == "CentOS")
+
+    - name:
